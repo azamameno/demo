@@ -1,0 +1,58 @@
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\TestPush.exe.config
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\TestPush.exe
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\TestPush.pdb
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Newtonsoft.Json.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Amazon.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Apple.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Blackberry.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Core.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Firefox.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Google.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\PushSharp.Windows.dll
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Newtonsoft.Json.xml
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\obj\Debug\TestPush.csprojResolveAssemblyReference.cache
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\obj\Debug\TestPush.exe
+c:\users\minht\onedrive\documents\visual studio 2017\Projects\TestPush\TestPush\obj\Debug\TestPush.pdb
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.Core.dll
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.dll
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.Translate.v2.dll
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Zlib.Portable.dll
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.pdb
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.xml
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.Core.pdb
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.Core.xml
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.PlatformServices.pdb
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.Translate.v2.pdb
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Google.Apis.Translate.v2.xml
+C:\Users\minht\OneDrive\documents\visual studio 2017\Projects\TestPush\TestPush\bin\Debug\Zlib.Portable.xml
+E:\Project\demo\TestPush\bin\Debug\TestPush.exe.config
+E:\Project\demo\TestPush\bin\Debug\TestPush.exe
+E:\Project\demo\TestPush\bin\Debug\TestPush.pdb
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.Core.dll
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.dll
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.PlatformServices.dll
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.Translate.v2.dll
+E:\Project\demo\TestPush\bin\Debug\Newtonsoft.Json.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Amazon.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Apple.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Blackberry.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Core.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Firefox.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Google.dll
+E:\Project\demo\TestPush\bin\Debug\PushSharp.Windows.dll
+E:\Project\demo\TestPush\bin\Debug\Zlib.Portable.dll
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.pdb
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.xml
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.Core.pdb
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.Core.xml
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.PlatformServices.pdb
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.PlatformServices.xml
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.Translate.v2.pdb
+E:\Project\demo\TestPush\bin\Debug\Google.Apis.Translate.v2.xml
+E:\Project\demo\TestPush\bin\Debug\Newtonsoft.Json.xml
+E:\Project\demo\TestPush\bin\Debug\Zlib.Portable.xml
+E:\Project\demo\TestPush\obj\Debug\TestPush.csprojResolveAssemblyReference.cache
+E:\Project\demo\TestPush\obj\Debug\TestPush.exe
+E:\Project\demo\TestPush\obj\Debug\TestPush.pdb
