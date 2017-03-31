@@ -16,13 +16,13 @@ namespace TestPush
         {
             List<string> listDeviceToken = new List<string>()
             {
-                "0e29d1596c709a5b3b32c2ab839e68d9c52f22b9131dc8f4b9f56ab2d4087132"
+                "2e08886ffbc7563f82a66afacc55e9609b3f9239090ce3dc083088b222c68760"
             };
             bool isContinue = false;
             do
             {
                 Console.WriteLine("######################### Start ########################");
-                PushNotifications("Đậu xanh thằng Quốc", "Đi chết đi Quốc", listDeviceToken);
+                PushNotifications("test test", "test test", listDeviceToken);
                 Console.WriteLine("########################## End #########################");
                 Console.WriteLine("## Press Enter to continue, ESC to exit");
                 var key = Console.ReadKey().Key;

@@ -14,10 +14,10 @@ namespace TestPush
             Console.InputEncoding = Encoding.UTF8;
 
             //push noti
-            //DemoPushNotification.Run();
+            DemoPushNotification.Run();
 
             //hash pass
-            HashCode.Run();
+            //HashCode.Run();
 
             //Check Process
             //CheckAppProcess.Run();
