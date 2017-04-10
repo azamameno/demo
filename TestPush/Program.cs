@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TestPush
 {
@@ -14,7 +15,7 @@ namespace TestPush
             Console.InputEncoding = Encoding.UTF8;
 
             //push noti
-            DemoPushNotification.Run();
+            //DemoPushNotification.Run();
 
             //hash pass
             //HashCode.Run();
@@ -25,6 +26,9 @@ namespace TestPush
             //Convert to unsign
             //ConvertToUnSign.Run();
 
+            //Enum
+            TestEnum.Run(1);
+            
             Console.Read();
         }
 
