@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
@@ -21,6 +22,7 @@ namespace TestPush
             List<string> listDeviceToken = new List<string>()
             {
                 "dScwTf_3jwE:APA91bGmU14AyEOrdI5DOax1qUVYrcXRRXfSSL3IXcGW3VGIsthme6teZUE2i43e-q_5XyupyMVl1htwD2gTeJHSA31-wX0kxvHXaCWobPslrEDXSYSUw7BUZ_xcFs-jp7P-m93AD-Fs",
+                "eLKclsyniBU:APA91bHCrYL5a_vUQOEQRMqu6cUGVjfhVdOa6maFSWLT85vXH3GRSDT4yFOJPf-sji3WDzzSt5fBKuTXBIO5S571zNaRs7rdjuLSOU2utV5qd9uSyhVTA4sxfW3nC4C8y4eb0F4XjkQY",
             };
             bool isContinue = false;
             do
@@ -28,7 +30,12 @@ namespace TestPush
                 Console.WriteLine("######################### Start ########################");
                 // PushNotifications("test test", "test test", listDeviceToken, false);
                 //PushFCMNotifications("test", "test", listDeviceToken.FirstOrDefault());
-                Console.WriteLine(SendNotification(listDeviceToken, "body", "title", 0));
+                for (int i = 0; i < 100; i++)
+                {
+                    Console.WriteLine(SendNotification(listDeviceToken, "body", "title", 0));
+                    Thread.Sleep(1000);
+                }
+                
                 Console.WriteLine("########################## End #########################");
                 Console.WriteLine("## Press Enter to continue, ESC to exit");
                 var key = Console.ReadKey().Key;
@@ -45,7 +52,9 @@ namespace TestPush
                 var SENDER_ID = "29694662630";
 
                 WebRequest tRequest;
+
                 tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+
                 tRequest.Method = "post";
                 tRequest.ContentType = "application/json";
                 tRequest.Headers.Add(string.Format("Authorization: key={0}", SERVER_API_KEY));
