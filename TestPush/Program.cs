@@ -15,7 +15,7 @@ namespace TestPush
             Console.InputEncoding = Encoding.UTF8;
 
             //push noti
-            DemoPushNotification.Run();
+            //DemoPushNotification.Run();
 
             //hash pass
             //HashCode.Run();
@@ -28,6 +28,9 @@ namespace TestPush
 
             //Enum
             //TestEnum.Run(1)
+
+            //Parallel
+            ParallelTest.Run();
 
             Console.Read();
         }
