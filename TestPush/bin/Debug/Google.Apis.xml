@@ -480,6 +480,43 @@
             <summary>Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object.</summary>
             <exception cref="T:Google.GoogleApiException">If no error is found in the response.</exception>
         </member>
+        <member name="T:Google.Apis.Util.Store.NullDataStore">
+            <summary>
+            A null datastore. Nothing is stored, nothing is retrievable.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Store.NullDataStore.#ctor">
+            <summary>
+            Construct a new null datastore, that stores nothing.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Store.NullDataStore.ClearAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Google.Apis.Util.Store.NullDataStore.DeleteAsync``1(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Google.Apis.Util.Store.NullDataStore.GetAsync``1(System.String)">
+            <summary>
+            Asynchronously returns the stored value for the given key or <c>null</c> if not found.
+            This implementation of <see cref="T:Google.Apis.Util.Store.IDataStore"/> will always return a completed task
+            with a result of <c>null</c>. 
+            </summary>
+            <typeparam name="T">The type to retrieve from the data store.</typeparam>
+            <param name="key">The key to retrieve its value.</param>
+            <returns>Always <c>null</c>.</returns>
+        </member>
+        <member name="M:Google.Apis.Util.Store.NullDataStore.StoreAsync``1(System.String,``0)">
+            <summary>
+            Asynchronously stores the given value for the given key (replacing any existing value).
+            This implementation of <see cref="T:Google.Apis.Util.Store.IDataStore"/> does not store the value,
+            and will not return it in future calls to <see cref="M:Google.Apis.Util.Store.NullDataStore.GetAsync``1(System.String)"/>. 
+            </summary>
+            <typeparam name="T">The type to store in the data store.</typeparam>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>A task that completes immediately.</returns>
+        </member>
         <member name="T:Google.Apis.Download.DownloadStatus">
             <summary>Enum which represents the status of the current download.</summary>
         </member>
