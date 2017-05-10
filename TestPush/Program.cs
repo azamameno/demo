@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace TestPush
             Console.InputEncoding = Encoding.UTF8;
 
             //push noti
-            //DemoPushNotification.Run();
+            DemoPushNotification.Run();
 
             //hash pass
             //HashCode.Run();
@@ -30,8 +31,9 @@ namespace TestPush
             //TestEnum.Run(1)
 
             //Parallel
-            ParallelTest.Run();
+            //ParallelTest.Run();
 
+            
             Console.Read();
         }
 

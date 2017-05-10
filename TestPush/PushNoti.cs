@@ -21,21 +21,34 @@ namespace TestPush
         {
             List<string> listDeviceToken = new List<string>()
             {
-                "dScwTf_3jwE:APA91bGmU14AyEOrdI5DOax1qUVYrcXRRXfSSL3IXcGW3VGIsthme6teZUE2i43e-q_5XyupyMVl1htwD2gTeJHSA31-wX0kxvHXaCWobPslrEDXSYSUw7BUZ_xcFs-jp7P-m93AD-Fs",
-                "eLKclsyniBU:APA91bHCrYL5a_vUQOEQRMqu6cUGVjfhVdOa6maFSWLT85vXH3GRSDT4yFOJPf-sji3WDzzSt5fBKuTXBIO5S571zNaRs7rdjuLSOU2utV5qd9uSyhVTA4sxfW3nC4C8y4eb0F4XjkQY",
+                "dpbj2ZRHAMY:APA91bFimC2Yi_SYHfx_hTexx0RMwg68crq-mgVpUAs-uxtRRa_xvFTAyvF3PK3-RrtX1ay8kkeK7lJqd80vMMhaRCgYPsUi91VVW7NM4aNG-UUpAu2HF6oRBHCMZnFbesaZ3KD827V3",
             };
             bool isContinue = false;
             do
             {
+                bool isPushSharp = false;
                 Console.WriteLine("######################### Start ########################");
-                // PushNotifications("test test", "test test", listDeviceToken, false);
-                //PushFCMNotifications("test", "test", listDeviceToken.FirstOrDefault());
-                for (int i = 0; i < 100; i++)
+
+                if (isPushSharp)
                 {
-                    Console.WriteLine(SendNotification(listDeviceToken, "body", "title", 0));
-                    Thread.Sleep(1000);
+                    for (int i = 0; i < 50; i++)
+                    {
+                        PushNotifications("test test", "test test", listDeviceToken, false);
+                        Thread.Sleep(2000);
+                    }
                 }
-                
+                else
+                {
+                    for (int i = 0; i < 20; i++)
+                    {
+                        foreach (var deviceRegId in listDeviceToken)
+                        {
+                            Console.WriteLine(SendNotification(deviceRegId, "body" + i, "title" + i, 0));
+                        }
+                        Thread.Sleep(2000);
+                    }
+                }
+
                 Console.WriteLine("########################## End #########################");
                 Console.WriteLine("## Press Enter to continue, ESC to exit");
                 var key = Console.ReadKey().Key;
@@ -44,16 +57,14 @@ namespace TestPush
             } while (isContinue);
         }
 
-        public static string SendNotification(List<string> deviceRegIds, string message, string title, long id)
+        public static string SendNotification(string deviceRegId, string message, string title, long id)
         {
             try
             {
                 string SERVER_API_KEY = "AIzaSyCYBfpo0fH_3owQdmB2RfX1HgbG4vx3epM";
-                var SENDER_ID = "29694662630";
+                string SENDER_ID = "29694662630";
 
-                WebRequest tRequest;
-
-                tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+                WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
 
                 tRequest.Method = "post";
                 tRequest.ContentType = "application/json";
@@ -64,7 +75,7 @@ namespace TestPush
                 PushFCMNotification data = new PushFCMNotification();
                 data.notification.title = title;
                 data.notification.body = message;
-                data.registration_ids = deviceRegIds;
+                data.to = deviceRegId;
 
                 string postData1 = new JavaScriptSerializer().Serialize(data);
                 Byte[] byteArray = Encoding.UTF8.GetBytes(postData1);
@@ -133,9 +144,11 @@ namespace TestPush
                 }
                 else
                 {
-                    string senderKey = "29694662630";
-                    string apiKey = "AIzaSyAXGWom6HmfBm5iJVGP5G8InK7KxOmBeVY";
-                    var config = new GcmConfiguration(senderKey, apiKey, null);
+                    string SERVER_API_KEY = "AIzaSyCYBfpo0fH_3owQdmB2RfX1HgbG4vx3epM";
+                    string SENDER_ID = "29694662630";
+                    //string senderKey = "29694662630";
+                    //string apiKey = "AIzaSyAXGWom6HmfBm5iJVGP5G8InK7KxOmBeVY";
+                    var config = new GcmConfiguration(SENDER_ID, SERVER_API_KEY, null);
                     config.GcmUrl = "https://fcm.googleapis.com/fcm/send";
 
                     var gcmBroker = new GcmServiceBroker(config);
@@ -148,16 +161,23 @@ namespace TestPush
                     {
                         gcmBroker.QueueNotification(new GcmNotification
                         {
-                            RegistrationIds = new List<string> { item },
+                            To = item,
+                            // RegistrationIds = new List<string> { item },
+                            ContentAvailable = true,
+                            Priority = GcmNotificationPriority.High,
+                            DryRun = true,
                             Notification = JObject.Parse(
                                             "{" +
                                                 "\"title\" : \"" + _title + "\"," +
-                                                "\"body\" : \"" + _mess + "\"" +
+                                                "\"body\" : \"" + _mess + "\"," +
+                                                "\"sound\" : \"default\"" +
                                             "}"),
                             Data = JObject.Parse(
                                             "{" +
-                                                "\"CustomDataKey1\" : \"" + "test" + "\"," +
-                                                "\"CustomDataKey2\" : \"" + "test" + "\"" +
+                                                "\"content_id\":\"9daacefd-47bd-421d-a13d-efda4f13935f\"," +
+                                                "\"content_noti_id\":\"transferNoti\"," +
+                                                "\"content_code\":8," +
+                                                "\"badge\":1" +
                                             "}")
                         });
                     }
@@ -274,21 +294,22 @@ namespace TestPush
 
     public class PushFCMNotification
     {
+        public bool content_available { get; set; }
         public string collapse_key { get; set; }
         public int time_to_live { get; set; }
         public bool delay_while_idle { get; set; }
         public string priority { get; set; }
-        public List<string> registration_ids { get; set; }
+        public string to { get; set; }
         public FCMNotification notification { get; set; }
         public FCMData data { get; set; }
 
         public PushFCMNotification()
         {
+            content_available = true;
             collapse_key = "score_update";
             time_to_live = 10;
             delay_while_idle = true;
             priority = "normal";
-            registration_ids = new List<string>();
             notification = new FCMNotification();
             data = new FCMData();
         }
