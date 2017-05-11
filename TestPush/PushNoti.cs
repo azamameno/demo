@@ -21,7 +21,7 @@ namespace TestPush
         {
             List<string> listDeviceToken = new List<string>()
             {
-                "dpbj2ZRHAMY:APA91bFimC2Yi_SYHfx_hTexx0RMwg68crq-mgVpUAs-uxtRRa_xvFTAyvF3PK3-RrtX1ay8kkeK7lJqd80vMMhaRCgYPsUi91VVW7NM4aNG-UUpAu2HF6oRBHCMZnFbesaZ3KD827V3",
+                "f3-xGV1opog:APA91bEAEmHL3pH69gSYknXSusnmE5pMqgmYqZwiNGNNF3UyRXENNC9oTQBbaHxtHsOdWCKnMeKCqY3i5RuwCuLsiP3jKmMKZyuinQkNUGJYYixzTFNb7703ohr_73M6gEjtlwGw9-xm",
             };
             bool isContinue = false;
             do
@@ -43,7 +43,7 @@ namespace TestPush
                     {
                         foreach (var deviceRegId in listDeviceToken)
                         {
-                            Console.WriteLine(SendNotification(deviceRegId, "body" + i, "title" + i, 0));
+                            Console.WriteLine("#Server response: " + SendNotification(deviceRegId, "body" + i, "title" + i, 0));
                         }
                         Thread.Sleep(2000);
                     }
@@ -69,15 +69,19 @@ namespace TestPush
                 tRequest.Method = "post";
                 tRequest.ContentType = "application/json";
                 tRequest.Headers.Add(string.Format("Authorization: key={0}", SERVER_API_KEY));
-
                 tRequest.Headers.Add(string.Format("Sender: id={0}", SENDER_ID));
 
                 PushFCMNotification data = new PushFCMNotification();
-                data.notification.title = title;
-                data.notification.body = message;
+                //data.notification.title = title;
+                //data.notification.body = message;
+                data.data.title = title;
+                data.data.body = message;
                 data.to = deviceRegId;
 
                 string postData1 = new JavaScriptSerializer().Serialize(data);
+                Console.WriteLine("###");
+                Console.WriteLine("#Json Request: " + postData1);
+
                 Byte[] byteArray = Encoding.UTF8.GetBytes(postData1);
                 tRequest.ContentLength = byteArray.Length;
 
@@ -90,13 +94,13 @@ namespace TestPush
                 dataStream = tResponse.GetResponseStream();
 
                 StreamReader tReader = new StreamReader(dataStream);
+                string serverResponse = tReader.ReadToEnd();
 
-                String sResponseFromServer = tReader.ReadToEnd();
 
                 tReader.Close();
                 dataStream.Close();
                 tResponse.Close();
-                return sResponseFromServer;
+                return serverResponse;
             }
             catch (Exception ex)
             {
@@ -300,7 +304,7 @@ namespace TestPush
         public bool delay_while_idle { get; set; }
         public string priority { get; set; }
         public string to { get; set; }
-        public FCMNotification notification { get; set; }
+        // public FCMNotification notification { get; set; }
         public FCMData data { get; set; }
 
         public PushFCMNotification()
@@ -310,7 +314,7 @@ namespace TestPush
             time_to_live = 10;
             delay_while_idle = true;
             priority = "normal";
-            notification = new FCMNotification();
+            //notification = new FCMNotification();
             data = new FCMData();
         }
     }
@@ -335,12 +339,20 @@ namespace TestPush
         public int content_code { get; set; }
         public int badge { get; set; }
 
+        public string title { get; set; }
+        public string body { get; set; }
+        public string sound { get; set; }
+
         public FCMData()
         {
             content_id = "9daacefd-47bd-421d-a13d-efda4f13935f";
             content_code = 8;
             content_noti_id = "transferNoti";
             badge = 1;
+
+            title = "";
+            body = "";
+            sound = "default";
         }
     }
 }
