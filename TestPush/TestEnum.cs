@@ -10,8 +10,20 @@ namespace TestPush
     {
         public static void Run(int num)
         {
-            Console.WriteLine("Number: " + num);
-            Console.WriteLine("Enum: " + (ETest)num);
+            var l = Enum.GetValues(typeof(ETest)).Cast<ETest>().ToList();
+
+            foreach (var i in l)
+            {
+                Console.WriteLine(i.GetTypeCode());
+            }
+
+            //foreach (var e in Enum.GetValues(typeof(ETest)))
+            //{
+            //    Console.WriteLine(e.ToString());
+            //}
+            
+
+            
         }
 
         public enum ETest
