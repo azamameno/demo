@@ -13,7 +13,7 @@ namespace TestPush
         {
             int sum1 = 0;
             int sum2 = 0;
-            List<int> listInt = new List<int>();
+            System.Collections.Generic.List<int> listInt = new System.Collections.Generic.List<int>();
 
             for (int i = 0; i < 10000000; i++)
             {

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <deplay>5</deplay>
+    <items>
+        <item>
+            <name>poins auto</name>
+            <api>api/wallet/support/check/data?minutes=5</api>
+            <urls>
+                <url>http://localhost/wallet/</url>
+                <url>http://localhost/walletba/</url>
+            </urls>
+            <method>GET</method>
+            <time>-1</time>
+            <data>
+
+
+            </data>
+        </item>
+        <item>
+            <name>combine mall</name>
+            <api>api/v1/BusinessDay/MallReport/Combine</api>
+            <urls>
+                <url>http://apivn.nupos.com.sg/nupos.newba3/</url>
+            </urls>
+            <method>POST</method>
+            <time>10</time>
+            <data>
+                <param name="MerchantID" datatype="string">abcxyz</param>
+                <param name="StoreID" datatype="string">
+                    <child>abc</child>
+                    <child>123</child>
+                </param>
+                <param name="number" datatype="int">1</param>
+                
+            </data>
+        </item>
+    </items>
+</root>

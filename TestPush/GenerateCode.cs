@@ -11,7 +11,7 @@ namespace TestPush
     {
         public static void Run()
         {
-            List<string> listCode = new List<string>();
+            System.Collections.Generic.List<string> listCode = new System.Collections.Generic.List<string>();
             Random random = new Random();
             for (int i = 0; i < 100; i++)
             {

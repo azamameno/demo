@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace TestPush
@@ -28,7 +30,7 @@ namespace TestPush
             //ConvertToUnSign.Run();
 
             //Enum
-            TestEnum.Run(1);
+            //TestEnum.Run(1);
 
             //Parallel
             //ParallelTest.Run();
@@ -39,7 +41,28 @@ namespace TestPush
             //Generate code
             //GenerateCode.Run();
 
+            //Text list
+            //TestList.Run();
 
+            //XML
+            //FuncXML.Run();
+
+            //Multi lan
+            //MultiLan.Run();
+
+            //Get Method Name
+            //MethodName.Run();
+
+            //Generic class
+            Info info = new Info()
+            {
+                Email = "abc@gmai.com",
+                Password = "123"
+            };
+
+            var json = JsonConvert.SerializeObject(info);
+            Console.WriteLine(json);
+            var result = GenericClassSupport.GetT<Info>(json);
 
 
             Console.Read();

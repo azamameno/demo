@@ -39,7 +39,7 @@ namespace TestPush
 
                 TLog.Logger.Warning("w");
 
-                List<string> listStr = null;
+                System.Collections.Generic.List<string> listStr = null;
 
                 int c = listStr.Count;
             }
