@@ -130,8 +130,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoDeleteLog.cs" />
     <Compile Include="CheckAppProcess.cs" />
     <Compile Include="ConvertToUnSign.cs" />
+    <Compile Include="ExtentionObject.cs" />
     <Compile Include="FuncXML.cs" />
     <Compile Include="GenerateCode.cs" />
     <Compile Include="GenericClassSupport.cs" />
