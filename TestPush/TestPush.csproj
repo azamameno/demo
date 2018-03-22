@@ -140,6 +140,7 @@
     <Compile Include="HashCode.cs" />
     <Compile Include="MethodName.cs" />
     <Compile Include="MultiLan.cs" />
+    <Compile Include="NextChar.cs" />
     <Compile Include="ParallelTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

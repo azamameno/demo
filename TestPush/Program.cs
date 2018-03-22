@@ -76,7 +76,10 @@ namespace TestPush
             //bool isOk = dayStr.Contains("-1-");
 
             //round down
-            Rounding.Run();
+            //Rounding.Run();
+
+            //next char
+            NextChar.Run();
 
             Console.Read();
         }
