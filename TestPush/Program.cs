@@ -79,7 +79,10 @@ namespace TestPush
             //Rounding.Run();
 
             //next char
-            NextChar.Run();
+            //NextChar.Run();
+
+            //regx
+            RegX.Run();
 
             Console.Read();
         }

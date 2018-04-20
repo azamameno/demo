@@ -22,10 +22,17 @@ namespace TestPush
 
             double x = Math.Pow(10, roundDecimal);
 
-            double afterRound = RoundingOption4(cash, x);
+            double afterRound = 0;
 
             Console.WriteLine("Before Round: " + cash);
-            Console.WriteLine("After Round: " + afterRound);
+            afterRound = RoundingOption1(cash, x);
+            Console.WriteLine("After Round Option 1: " + afterRound);
+            afterRound = RoundingOption2(cash, x);
+            Console.WriteLine("After Round Option 2: " + afterRound);
+            afterRound = RoundingOption3(cash, x);
+            Console.WriteLine("After Round Option 3: " + afterRound);
+            afterRound = RoundingOption4(cash, x);
+            Console.WriteLine("After Round Option 4: " + afterRound);
         }
 
         ///<summary>
