@@ -82,7 +82,10 @@ namespace TestPush
             //NextChar.Run();
 
             //regx
-            RegX.Run();
+            //RegX.Run();
+
+            //make video
+            VideoMaker.Run();
 
             Console.Read();
         }
